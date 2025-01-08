@@ -1,0 +1,24 @@
+{
+  "name": "serialization-test",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "ts-patch": "^3.3.0",
+    "tsx": "^4.19.2"
+  },
+  "peerDependencies": {
+    "typescript": "~5.7.2"
+  },
+  "dependencies": {
+    "@ryoppippi/unplugin-typia": "npm:@jsr/ryoppippi__unplugin-typia",
+    "mitata": "^1.0.26",
+    "typia": "^7.5.1"
+  },
+  "scripts": {
+    "prepare": "ts-patch install && typia patch",
+    "generate": "typia generate --input ./src --output ./dist",
+    "start": "bun src/index.ts",
+    "start:node": "tsx dist/index.ts"
+  }
+}
